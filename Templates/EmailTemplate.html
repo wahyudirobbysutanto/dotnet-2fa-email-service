@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Verification Code</title>
+    <style>
+        /* Trik Bootstrap 2: Media Query untuk optimasi tambahan di HP (iOS & Android Gmail) */
+        @media screen and (max-width: 600px) {
+            .email-card {
+                width: 100% !important;
+                border-radius: 0px !important; /* Full bleed di HP */
+            }
+
+            .email-body {
+                padding: 20px !important; /* Sisi padding lebih ramping di HP */
+            }
+
+            .otp-code {
+                font-size: 28px !important; /* Perkecil font sedikit di layar kecil agar tidak bungkus baris */
+                letter-spacing: 3px !important;
+            }
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f6f9; margin: 0; padding: 0;">
+
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f4f6f9; padding: 20px 10px;">
+        <tr>
+            <td align="center">
+
+                <table class="email-card" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; border: 1px solid #e1e4e8; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                    <tr>
+                        <td class="email-body" style="padding: 30px;">
+
+                            <h2 style="color: #1a202c; border-bottom: 2px solid #edf2f7; padding-bottom: 10px; margin-top: 0; font-size: 22px;">{{SenderName}}</h2>
+
+                            <p style="color: #4a5568; font-size: 16px; line-height: 1.5; margin-top: 15px;">Hello,</p>
+                            <p style="color: #4a5568; font-size: 16px; line-height: 1.5;">Your requested 2FA security verification code is active. Please use the credentials below to authorize your session access:</p>
+
+                            <div style="background-color: #f7fafc; border: 1px dashed #cbd5e0; padding: 20px; text-align: center; margin: 20px 0; border-radius: 6px;">
+                                <span class="otp-code" style="font-size: 32px; font-weight: bold; color: #2b6cb0; letter-spacing: 5px; display: block;">{{OtpCode}}</span>
+                                <span style="font-size: 13px; color: #718096; display: block; margin-top: 10px;">Tracking Reference: <strong>{{ReferenceCode}}</strong></span>
+                            </div>
+
+                            <p style="color: #e53e3e; font-size: 14px; font-weight: bold; margin-bottom: 0;">This token is strictly valid for only 1 minute.</p>
+
+                            <p style="color: #718096; font-size: 12px; margin-top: 30px; border-top: 1px solid #edf2f7; padding-top: 15px; line-height: 1.5;">
+                                If you did not initiate this authentication transaction request, please alert cybersecurity operations immediately.
+                            </p>
+
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

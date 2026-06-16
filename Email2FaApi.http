@@ -1,0 +1,41 @@
+@BaseAddress = https://localhost:7200
+
+### TEST 1: PLAIN TEXT OTP GENERATION - Development
+POST {{BaseAddress}}/api/2fa/sendplain
+Content-Type: application/json
+
+{
+  "email": "wahyudi.robby@cyberquote.co.id"
+}
+
+###
+
+### TEST 2: HASHED OTP GENERATION - Production
+POST {{BaseAddress}}/api/2fa/send
+Content-Type: application/json
+
+{
+  "email": "wahyudi.robby@cyberquote.co.id"
+}
+
+###
+
+### TEST 3: VERIFY PLAIN TEXT OTP
+POST {{BaseAddress}}/api/2fa/verifyplain
+Content-Type: application/json
+
+{
+  "email": "wahyudi.robby@cyberquote.co.id",
+  "tokenCode": "110333" 
+}
+
+###
+
+### TEST 4: VERIFY SECURE HASHED OTP
+POST {{BaseAddress}}/api/2fa/verify
+Content-Type: application/json
+
+{
+  "email": "wahyudi.robby@cyberquote.co.id",
+  "tokenCode": "737757"
+}

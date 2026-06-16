@@ -1,0 +1,13 @@
+# Folder hasil build otomatis (.NET)
+bin/
+obj/
+.vs/
+publish/
+
+# File konfigurasi berisi password asli Bizmail kamu
+appsettings.json
+appsettings.Development.json
+
+# File log transaksi internal
+log.txt
+log_*.txt
